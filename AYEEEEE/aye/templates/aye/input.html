@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <header class="clearfix">
+
+
+  <div id="nav-button"> <span class="nav-bar"></span> <span class="nav-bar"></span> <span class="nav-bar"></span> </div>
+  <nav style="overflow: auto;">
+    <ul id="nav" style="height: auto;">
+      <li class="active"><a href="{% url 'home' %}">Главная</a> </li>
+        <li class="active"><a href="{% url 'input' %}">Ввод</a> </li>
+
+
+
+    </ul>
+  </nav>
+
+</header>
+
+<body>
+<div class="futers">
+    <h1>Добавить запись</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.apartament }}<br>
+        <span>{{ eror }}</span>
+        <button class="btn btn-success" type="submit">Ввести</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<header class="clearfix">
+
+
+  <div id="nav-button"> <span class="nav-bar"></span> <span class="nav-bar"></span> <span class="nav-bar"></span> </div>
+  <nav style="overflow: auto;">
+    <ul id="nav" style="height: auto;">
+      <li class="active"><a href="{% url 'home' %}">Главная</a> </li>
+        <li ><a href="{% url 'input' %}">Ввод</a> </li>
+
+
+
+    </ul>
+  </nav>
+
+</header>
+<body>
+
+
+        {%for getdata in EmployeeDetails%}
+        <tr>
+            <h2>Это <td>{{getdata.name}}</td>, его мыло <td>{{getdata.email}}, <td> он в списке</td><td> {{ getdata.id }} </td>и даже его адрес</td> <td>{{getdata.apartament}}</td></td></h2>
+
+        </tr>
+        {% endfor %}
+
+        <table border="5">
+            {%for getdata in EmployeeDetails%}
+                <tr>
+            <th>{{getdata.id}}</th>
+            <th> {{ getdata.name }}</th>
+            <th> {{ getdata.email }}</th>
+            <th> {{ getdata.apartament }}</th>
+                <tr>
+            {% endfor %}
+        </table>
+        {%for getdata in EmployeeDetails%}
+
+        <p class="link-read-post">это   {{ getdata.name }} а это его инфа <a href="{{ p.get_url }}">ЧИТАТЬ</a></p>
+
+        {% endfor %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
